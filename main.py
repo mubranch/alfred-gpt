@@ -14,14 +14,13 @@ def main(query: str):
 
 def gpt_35(prompt: str, api: openai):
     
-    endpoint = "https://api.openai.com/v1/completions" #POST
+    endpoint = "https://api.openai.com/v1/chat/completions" #POST
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api.api_key}"}
     body = {
-        "model": "text-davinci-003",
-        "prompt": f"{query}",
-        # "max_tokens": 50,
-        "temperature": 0
+        "model": "gpt-3.5-turbo",
+        "messages": [{"role": "user", "content": f"{query}"}]
     }
+
     
     response = requests.post(url=endpoint, json=body, headers=headers)
     js = response.json()
@@ -30,7 +29,7 @@ def gpt_35(prompt: str, api: openai):
     with open(save_path, "w") as f:
         json.dump(js, f, indent=4) # Save last response to file
         
-    gpt_response = js["choices"][0]["text"]
+    gpt_response = js["choices"][0]["message"]["content"]
     formatted_response = f"\"{gpt_response}\""
     print(formatted_response) # Send to alfred viewer
     
