@@ -1,0 +1,42 @@
+{
+    "id": "chatcmpl-79m6FyYSbMH6KEK6R86xSwBl6kwva",
+    "object": "chat.completion",
+    "created": 1682564203,
+    "model": "gpt-3.5-turbo-0301",
+    "usage": {
+        "prompt_tokens": 19,
+        "completion_tokens": 39,
+        "total_tokens": 58
+    },
+    "choices": [
+        {
+            "message": {
+                "role": "assistant",
+                "content": "That's great! Welcome to the ChatGPT API community. We hope you have a great experience using our API. If you have any questions or concerns, feel free to let us know."
+            },
+            "finish_reason": "stop",
+            "index": 0
+        }
+    ]
+}
+{
+    "id": "chatcmpl-79mYS8NMAzdLi0xkzfNDFxI2VE4RW",
+    "object": "chat.completion",
+    "created": 1682565952,
+    "model": "gpt-3.5-turbo-0301",
+    "usage": {
+        "prompt_tokens": 18,
+        "completion_tokens": 67,
+        "total_tokens": 85
+    },
+    "choices": [
+        {
+            "message": {
+                "role": "assistant",
+                "content": "As an AI language model, I don't have current up-to-date information. However, to my knowledge, the rarest animal in the world is the vaquita, a species of porpoise that is only found in the Gulf of California. It is estimated that there are less than 30 individuals left in the wild."
+            },
+            "finish_reason": "stop",
+            "index": 0
+        }
+    ]
+}
