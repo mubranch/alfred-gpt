@@ -17,7 +17,7 @@ def gpt_35(prompt: str, api: openai):
     endpoint = "https://api.openai.com/v1/chat/completions" #POST
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api.api_key}"}
     body = {
-        "model": "gpt-3.5-turbo",
+        "model": "text-davinci-003",
         "messages": [{"role": "user", "content": f"{prompt}"}]
     }
     
