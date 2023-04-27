@@ -23,8 +23,9 @@ def gpt_35(prompt: str, api: openai):
     
     response = requests.post(url=endpoint, json=body, headers=headers)
     js = response.json()
+    save_path = os.getenv("RESPONSE_PATH")
     
-    with open(os.getenv("PATH_TO_RESPONSE_JSON"), "w") as f:
+    with open(save_path, "w") as f:
         json.dump(js, f, indent=4) # Save last response to file
         
     gpt_response = js["choices"][0]["message"]["content"]
