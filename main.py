@@ -14,7 +14,7 @@ def main(query: str):
 
 def gpt_35(prompt: str, api: openai):
     
-    endpoint = "https://api.openai.com/v1/chat/completions" #POST
+    endpoint = "https://api.openai.com/v1/completions" #POST
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api.api_key}"}
     body = {
         "model": "text-davinci-003",
