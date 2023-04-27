@@ -18,7 +18,9 @@ def gpt_35(prompt: str, api: openai):
     headers = {"Content-Type": "application/json", "Authorization": f"Bearer {api.api_key}"}
     body = {
         "model": "text-davinci-003",
-        "messages": [{"role": "user", "content": f"{prompt}"}]
+        "prompt": f"{query}",
+        # "max_tokens": 50,
+        "temperature": 0
     }
     
     response = requests.post(url=endpoint, json=body, headers=headers)
@@ -28,7 +30,7 @@ def gpt_35(prompt: str, api: openai):
     with open(save_path, "w") as f:
         json.dump(js, f, indent=4) # Save last response to file
         
-    gpt_response = js["choices"][0]["message"]["content"]
+    gpt_response = js["choices"][0]["text"]
     formatted_response = f"\"{gpt_response}\""
     print(formatted_response) # Send to alfred viewer
     
